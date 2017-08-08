@@ -12,7 +12,7 @@ class TasksController < ApplicationController
   end
 
   def create
-    @task = Task.new(params[:restaurant])
+    @task = Task.new(task_params)
     @task.save
   end
 
@@ -22,11 +22,17 @@ class TasksController < ApplicationController
 
   def update
     @task = Task.find(params[:id])
-    @task.update(params[:task])
+    @task.update(task_params)
   end
 
   def destroy
     @task = Task.find(params[:id])
     @task = Task.destroy
+  end
+
+  private
+
+  def task_params
+    params.require(:task).permit(:name, :details)
   end
 end

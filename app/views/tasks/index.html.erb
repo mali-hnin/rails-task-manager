@@ -2,6 +2,7 @@
 <p>Find me in app/views/tasks/index.html.erb</p>
 <ul>
 <li><% @tasks.each do |task| %>
-  <%= task.name %>
+  <h3><%= task.name %></h3>
+  <p><%= task.details %></p>
 <% end %></li>
 </ul>
