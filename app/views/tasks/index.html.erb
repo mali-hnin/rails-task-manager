@@ -2,11 +2,12 @@
 <p>Find me in app/views/tasks/index.html.erb</p>
 <h2><%= link_to "add a new task", new_task_path(@task) %></h2>
 <ul>
-<li><% @tasks.each do |task| %>
-  <h3><%= link_to task.name, task_path(task) %></h3>
+<% @tasks.each do |task| %>
+  <li><h3><%= task.name %></h3>
+  <p><%= link_to "details", task_path(task) %></p>
   <%= link_to "edit task", edit_task_path(task) %>
   <%= link_to "delete task", task_path(task),
   method: :delete,
-  data: { confirm: "Are you sure?" } %>
-<% end %></li>
+  data: { confirm: "Are you sure?" } %></li>
+<% end %>
 </ul>

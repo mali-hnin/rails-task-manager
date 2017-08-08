@@ -4,6 +4,8 @@
 <p><%= @task.details %></p>
 <p>Created on: <%= @task.created_at %></p>
 <br>
+<%= link_to "edit", edit_task_path(@task) %>
+<br>
 <%= link_to "delete", task_path(@task),
       method: :delete,
       data: { confirm: "Are you sure?" } %>
