@@ -2,9 +2,10 @@
 <p>Find me in app/views/tasks/show.html.erb</p>
 <h3><%= @task.name %></h3>
 <p><%= @task.details %></p>
-<p>Created on: <%= @task.params[:timestamps] %></p>
+<p>Created on: <%= @task.created_at %></p>
 <br>
 <%= link_to "delete", task_path(@task),
       method: :delete,
       data: { confirm: "Are you sure?" } %>
+<br>
 <%= link_to "return to the index of tasks", tasks_path %>
